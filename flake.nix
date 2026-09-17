@@ -33,8 +33,7 @@
               cp LICENSE "$out/share/bend/"
               makeWrapper ${lib.getExe pkgs.bun} "$out/bin/bend" \
                 --add-flags "$out/share/bend/bend2/main.ts" \
-                --prefix PATH : ${lib.makeBinPath [ pkgs.clang ]} \
-                --set-default CC ${pkgs.clang}/bin/clang
+                --suffix PATH : ${lib.makeBinPath [ pkgs.clang ]}
               runHook postInstall
             '';
             meta = {
