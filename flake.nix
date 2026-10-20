@@ -90,7 +90,7 @@
             bun main.js > actual
             cmp expected actual
             bend main.bend -o main
-            ./main --gpu off > actual
+            ./main +RTS --gpu off > actual
             cmp expected actual
             touch "$out"
           '';
